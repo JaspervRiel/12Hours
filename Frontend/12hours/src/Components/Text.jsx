@@ -13,7 +13,7 @@ class Text extends Component {
     
     return(
         <div>
-            <span>{this.handelState()}</span>
+            <span className='badge badge-primary'>{this.handelState()}</span>
             <button onClick={this.handleIncrement}>increment</button>
         </div>
     );
@@ -25,5 +25,6 @@ class Text extends Component {
         return count === 0 ? 'zero' : count;
     }
     };
+
  
 export default Text;
