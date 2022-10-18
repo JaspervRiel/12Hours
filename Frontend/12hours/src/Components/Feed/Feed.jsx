@@ -5,7 +5,7 @@ const Feed = ({author,download_url}) =>{
         
         <div className="div-feed">
             <div>{author}</div>
-            <div>
+            <div className="image">
                 <img src={download_url} alt='error'/>
             </div>
         </div>
