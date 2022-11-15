@@ -24,12 +24,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: ./Frondend/12hours
     - name: run ci
-      working-directory: ./frondend/12hours
+      working-directory: ./Frondend/12hours
       run: npm ci
     - name: run build
-      working-directory: ./frondend/12hours
+      working-directory: ./Frondend/12hours
       run: npm run build --if-present
     - name: run test
-      working-directory: ./frondend/12hours
+      working-directory: ./Frondend/12hours
       run: npm test
