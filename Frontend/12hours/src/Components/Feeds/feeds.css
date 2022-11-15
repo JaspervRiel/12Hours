@@ -1,17 +1,25 @@
-.div-image{
-    margin: auto;
-    width: 50%
+.container{
+    display: grid;
+    place-items: center;
+    background-color:#F9F9F5;
+    height: 100%;
+    width: 100%;
 
-};
+}
 .div-feed{
-    margin: auto;
-    width: 50%;
+    margin: 1%;
+    width: 35%;
     border: 2px solid black;
     border-radius: 5px;
+    justify-content: center;
 
 }
 
-img{
+.image{
     display: flex;
     justify-content: center;
+}
+.author{
+    margin: 0%;
+    background-color: white;
 }

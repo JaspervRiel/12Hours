@@ -1,38 +1,38 @@
 import React from "react";
 import {useState} from "react";
+import "./Style.css";
 
 function UploadImage(){
     const [BaseImage, setBaseImage] = useState("")
     
 
-    const clickUploadImage=async(e)=>{
+    const clickpreviewImage=async(e)=>{
         console.log(e.target.files)
         const file = e.target.files[0]
-        var base64=await Base64convert(file)
+        var base64 = await Base64convert(file);
         setBaseImage(base64)
-        console.log(base64)
+    }
         
+    const clickUploadImage =()=>{    
+         var myHeaders = new Headers();
+         myHeaders.append("Content-Type", "application/json");
         
-        // var myHeaders = new Headers();
-        // myHeaders.append("Content-Type", "application/json");
+         var raw = JSON.stringify({
+           "image": BaseImage.toString(),
+           "bio": "test"
+         })
         
-        // var raw = JSON.stringify({
-        //   "image": base64.toString(),
-        //   "bio": "test"
-        // });
+         var requestOptions = {
+           method: 'POST',
+           headers: myHeaders,
+           body: raw,
+           redirect: 'follow'
+         };
         
-        // var requestOptions = {
-        //   method: 'POST',
-        //   headers: myHeaders,
-        //   body: raw,
-        //   redirect: 'follow'
-        // };
-        
-        // fetch("http://localhost:8080/createImage", requestOptions)
-        //   .then(response => response.text())
-        //   .then(result => console.log(result))
-        //   .catch(error => console.log('error', error));    
-            }
+         fetch("http://localhost:8080/createImage", requestOptions)
+           .then(response => response.text())  
+        }
+            
         
     
 
@@ -54,14 +54,20 @@ function UploadImage(){
     }
     
     return(
-        <div>
+        <div className="parent">
+            <div classname="title">
+                <h1>Upload your image here</h1>
+            </div>
+            <div className="input">
             <input type="file" onChange={(e)=>{
-                clickUploadImage(e)
+                clickpreviewImage(e)
             }}>
 
             </input>
+            </div>
             <br></br>
-            <img src={BaseImage}/>
+            <img className="image-preview" src={BaseImage} alt="error"/>
+            <button onClick={clickUploadImage()}>Place Photo</button>
         </div>
     )
 }
