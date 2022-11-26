@@ -10,7 +10,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     strategy:
       matrix:
@@ -24,6 +24,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+        cache-dependency-path: './Frontend/12hours/package-lock.json'
+    - name: run ci
+      working-directory: ./Frontend/12hours
+      run: npm ci
+    - name: run build
+      working-directory: ./Frontend/12hours
+      run: npm run build --if-present
+    - name: run test
+      working-directory: ./Frontend/12hours
+      run: npm test
