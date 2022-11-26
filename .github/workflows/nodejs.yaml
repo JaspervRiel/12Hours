@@ -24,7 +24,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: ./Frondend/12hours/package-lock.json
+        cache-dependency-path: '**/package-lock.json'
     - name: run ci
       working-directory: ./Frondend/12hours
       run: npm ci
