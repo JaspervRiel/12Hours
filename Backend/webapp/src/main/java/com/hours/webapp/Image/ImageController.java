@@ -29,4 +29,11 @@ public class ImageController {
         return imageRep.findbyuserID(user);
     }
 
+    @CrossOrigin
+    @GetMapping("/GetImagebyID")
+    Image GetImagebyID(){
+        return imageRep.findById(1).orElse(null);
+    }
+
+
 }

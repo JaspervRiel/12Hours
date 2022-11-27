@@ -6,14 +6,15 @@ function UploadImage(){
     const [BaseImage, setBaseImage] = useState("")
     
 
-    const clickpreviewImage=async(e)=>{
+    const clickpreviewImage=(e)=>{
         console.log(e.target.files)
         const file = e.target.files[0]
-        var base64 = await Base64convert(file);
+        var base64 =  Base64convert(file);
         setBaseImage(base64)
     }
         
-    const clickUploadImage =()=>{    
+    const clickUploadImage =()=>{   
+        console.log("clicked button") 
          var myHeaders = new Headers();
          myHeaders.append("Content-Type", "application/json");
         
