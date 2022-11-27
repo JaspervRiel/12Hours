@@ -3,7 +3,10 @@ import Feeds from "./Components/Feeds/Feeds";
 function Home(){
     return(
         <div>
+            <div>
             <Feeds/>
+            </div>
+            
         </div>
     )
 }

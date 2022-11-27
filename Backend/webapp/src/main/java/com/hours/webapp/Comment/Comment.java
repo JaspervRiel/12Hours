@@ -12,10 +12,10 @@ public class Comment {
     private Integer id;
     private String commentText;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "image_ID")
+    @JoinColumn(name = "image_ID", referencedColumnName = "id")
     private Image image;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_ID")
+    @JoinColumn(name = "user_ID", referencedColumnName = "id")
     private User user;
 
     public Integer getId() {

@@ -18,6 +18,9 @@ fetch('http://localhost:8080/getImage').then(response => response.json())
                             <div className="image">
                               <img src={srcString} alt='error'/>
                             </div>
+                            <div className='div-comments'>
+                                
+                            </div>
                         </div>
                     )
                 } )}
