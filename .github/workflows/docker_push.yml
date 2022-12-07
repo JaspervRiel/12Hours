@@ -25,7 +25,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: Frontend/12hours/
           file: ./Dockerfile
           push: true
-          tags: basbruin/frontendbefit:latest
+          tags: jaspervriel/12hoursrepo:latest
