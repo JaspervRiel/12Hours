@@ -2,7 +2,7 @@ FROM node:17-alpine
 
 WORKDIR /app
 
-COPY 12hours/package.json
+COPY 12hours/package.json .
 
 RUN npm install
 
