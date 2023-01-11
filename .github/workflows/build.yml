@@ -27,7 +27,8 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('12Hours/Backend/webapp/pom.xml') }}
+          workingDirectory: 12Hours/Backend/webapp/
+          key: ${{ runner.os }}-m2-${{ hashFiles('pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Build and analyze
         env:
