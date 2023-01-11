@@ -31,8 +31,8 @@ function UploadComennt() {
     }
     return (<form>
         <label for="commentText">Comment:</label>
-        <input type="text" id="commentText" onChange={(e)=>setCommentText(e.target.value)}/>
-        <button type='button' onClick={handleClick}>Place Comment</button>
+        <input type="text" id="commentText" placeholder='Comment here' onChange={(e)=>setCommentText(e.target.value)}/>
+        <button type='button' id="buttonClick" onClick={handleClick}>Place Comment</button>
     </form>  );
 }
 

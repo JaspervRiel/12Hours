@@ -9,7 +9,6 @@ fetch('http://localhost:8080/getImage').then(response => response.json())
 
         return (
             <div className='container'>
-                <h1>test</h1>
                 {imageList.map(items =>{
                     const srcString = "data:image/png;base64," + items.image;
                     return(

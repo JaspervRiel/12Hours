@@ -7,5 +7,3 @@ services:
      - '3000:3000'
     stdin_open: true
     tty: true
-  12hours_backend:
-    build:

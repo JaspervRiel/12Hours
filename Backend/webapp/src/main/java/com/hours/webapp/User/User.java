@@ -7,12 +7,6 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(
-        name = "users",
-        uniqueConstraints = {
-                @UniqueConstraint(name = "student_email_unique", columnNames ="email" )
-        }
-)
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +18,7 @@ public class User {
     private String lastName;
     private Integer age;
     private String email;
-    @OneToMany
+        @OneToMany
     private Set<Image> images;
 
     public User(String firstName, String lastName, Integer age, String email) {

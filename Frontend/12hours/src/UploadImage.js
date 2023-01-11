@@ -10,6 +10,7 @@ function UploadImage(){
         console.log(e.target.files)
         const file = e.target.files[0]
         var base64 =  Base64convert(file);
+        console.log(base64)
         setBaseImage(base64)
     }
         
@@ -20,7 +21,10 @@ function UploadImage(){
         
          var raw = JSON.stringify({
            "image": BaseImage.toString(),
-           "bio": "test"
+           "bio": "test",
+           "user": {
+            "id": 1
+          }
          })
         
          var requestOptions = {

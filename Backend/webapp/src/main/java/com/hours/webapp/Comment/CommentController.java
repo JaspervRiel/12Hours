@@ -13,6 +13,7 @@ public class CommentController {
     CommentRepository CommentRepo;
     @Autowired
     ImageRepository imagerepo;
+
     @CrossOrigin
     @PostMapping("/CreateComment")
     Comment CreateComment(@RequestBody Comment comment) {
@@ -21,7 +22,9 @@ public class CommentController {
 
     @CrossOrigin
     @GetMapping("/getComments")
-    List<Comment>getComments(){
-    Image image = imagerepo.findById(1).orElse(null);
-    return CommentRepo.FindByImageID(image);}
+    List<Comment> getComments() {
+        Image image = imagerepo.findById(1).orElse(null);
+        List<Comment> listComments = CommentRepo.FindByImageID(image);
+        return listComments;
     }
+}

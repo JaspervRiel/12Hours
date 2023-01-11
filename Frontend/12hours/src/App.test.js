@@ -26,3 +26,9 @@ test('Test render uploadComment', () => {
    
   screen.debug();
   });
+
+test("Testing placing comment", ()=>{
+render (<uploadComment/>)
+});
+
+
