@@ -1,6 +1,8 @@
 FROM node:17-alpine
 
-COPY 12Hours/Frontend/12hours/package.json .
+WORKDIR /app/
+
+COPY /app/package.json .
 
 RUN npm install
 
